@@ -1,0 +1,41 @@
+extends layout
+
+block content
+ h2.page-header Register
+ p Please register using the form below
+ if errors
+  each error, i in errors
+   div.alert.alert-danger #{error.msg}
+ form(method='post', action='/users/register',enctype='multipart/form-data')
+  .form-group
+   label Email Address:
+   input.form-control(name='txtemail', type='email', placeholder='Enter Email')
+   .form-group
+   label Password:
+   input.form-control(name='txtpass', type='password', placeholder='Enter Password')
+  .form-group
+   label ReType Password:
+   input.form-control(name='txtrepass', type='password', placeholder='Enter Password')
+  .form-group
+   label Full Name:
+   input.form-control(name='txtuname', type='text', placeholder='Enter Full name')
+  .form-group
+   label Address:
+   input.form-control(name='txtaddr', type='text', placeholder='Enter Address')
+  .form-group
+   label City:
+   input.form-control(name='txtcity', type='text', placeholder='Enter City')
+  .form-group
+   label State:
+   input.form-control(name='txtstate', type='text', placeholder="Enter State")
+   .form-group
+   label Country
+   input.form-control(name='txtcountry', type='text', placeholder='Enter Country')
+   .form-group
+   label ZipCode:
+   input.form-control(name='txtzipcode', type='text', placeholder='Enter ZipCode')
+   .form-group
+   label Phone No:
+   input.form-control(name='txtphone', type='tel', placeholder='Enter Phone No')
+  input.btn.btn-primary(type='submit', name='submit',value='Register')
+  input.btn.btn-primary(type='button', name="butcancel", value="Cancel")
